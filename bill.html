@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" style="margin-left:10%">
+        <div class="sidebar" style="margin-left: -15%">
+            <h4 class="sitename"><a href="index.html">Bookstore</a></h4>
+
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                <li class="nav-item"><a class="nav-link" href="clients.html">Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="users.html">Users</a></li>
+                <li class="nav-item"><a class="nav-link active" href="bill.html">Bill</a></li>
+
+            </ul>
+
+
+        </div>
+
+        <div class="main">
+            <div class="content" style="text-align:center">
+                <h1>Bill</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row" style="margin-left:10%">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-2 form-group">
+                <label class="">Id</label>
+                <input id="id" class="form-control" disabled=true />
+            </div>
+            <div class="col-md-2 form-group">
+                <label class="">User</label>
+
+                <select id="user" class="form-control"> </select>
+            </div>
+            <div class="col-md-2 form-group">
+                <label class="">Client</label>
+
+                <select id="client" class="form-control"> </select>
+            </div>
+            <div class="col-md-2 form-group">
+                <label class="">Total</label>
+                <input id="total" class="form-control" disabled=true />
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+
+
+
+        <!-- ///billitems -->
+        <div class="row" style="margin-left:10%">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-2 form-group">
+                <label class="">Id</label>
+                <input id="billItemId" class="form-control" disabled=true />
+            </div>
+            <div class="col-md-2 form-group">
+                <label class="">book</label>
+
+                <select id="book" class="form-control"> </select>
+            </div>
+            <div class="col-md-2 form-group">
+                <label class="">count</label>
+                <input id="count" class="form-control" />
+            </div>
+            <div class="col-md-2 form-group">
+                <label class="">Price</label>
+                <input id="price" class="form-control" disabled=true />
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+        <div class="row" style="margin-left:10%">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-3">
+                <button type="button" class="btn btn-success"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="biSaveBtn">Save</button>
+            </div>
+            <div class="col-md-3"> <button type="button" class="btn btn-warning"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="biCancelBtn">Cancel</button>
+            </div>
+            <div class="col-md-3"> <button type="button" class="btn btn-danger"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="biDeleteBtn">Delete</button>
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+        <div class="row" style="margin-left:10%">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-12">
+                <table class="table table-hover " id="billItemTable" style="background-color: #e2e2e2">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book</th>
+                            <th>Count</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billItemsTBody">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row" style="margin-left:10%">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-3">
+                <button type="button" class="btn btn-default"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="refreshBtn">Refresh</button>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-success"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="saveBtn">Save</button>
+            </div>
+            <div class="col-md-3"> <button type="button" class="btn btn-warning"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="cancelBtn">Cancel</button>
+            </div>
+            <div class="col-md-3"> <button type="button" class="btn btn-danger"
+                    style="width: 100%; margin-top: 10px; margin-bottom: 10px;" id="deleteBtn">Delete</button>
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+        <div class="row" style="margin-left:10%">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-12">
+                <table class="table table-hover " style="background-color: #e2e2e2">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Client</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billsTBody">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+
+        <script src="bill.js"></script>
+
+</body>
+
+</html>
